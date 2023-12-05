@@ -25,10 +25,20 @@ const AuthForm = () => {
                 </Flex>
 
                 <Flex alignItems={"center"} justifyContent={"center"} cursor={"pointer"}>
-                    <Image w={5} src='/google.png' align={"Sign in with Google"}/>
+                    <Image w={5} src='/google.png' alt={"Sign in with Google"}/>
                     <Text mx={2} color={"blue.500"}>Log in with Google</Text>
                 </Flex>
             </VStack>
+        </Box>
+        <Box border={"1px solid grey"} borderRadius={4} padding={5}>
+            <Flex alignItems={"center"} justifyContent={"center"}>
+                <Box mx={2} fontSize={14}>
+                    {isLogin ? "Don't have any account?" : "Already have any account?"}
+                </Box>
+                <Box onClick={() => {setIsLogin(!isLogin)}} color={"blue.500"} cursor={"pointer"}>
+                    {isLogin ? "sign up" : "Log in"}
+                </Box>
+            </Flex>
         </Box>
     </>
   )
